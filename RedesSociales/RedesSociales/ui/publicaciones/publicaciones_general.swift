@@ -15,11 +15,20 @@ struct GeneralPublicaciones: View {
         ScrollView{
             VStack{
                 ForEach(controlador.publicaciones){ publicacion in
-                    Text("\(publicacion.id)")
-                    VStack{
-                        Text("\(publicacion.title)")
-                        Text("\(publicacion.body)")
+                    NavigationLink{
+                        Text("\(publicacion.id)")
+                    }label:{
+                        HStack{
+                            Text("\(publicacion.id)")
+                            VStack{
+                                Text("\(publicacion.title)")
+                                Text("\(publicacion.body)")
+                            }
+                        }
+                    }.onTapGesture {
+                        print("Ha seleccionado: \(publicacion.id)")
                     }
+                
                 }
             }
         }
