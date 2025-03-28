@@ -33,20 +33,20 @@ class PlaceHolderAPI : Codable{
             return respuesta_decodificada
         } 
         
-        catch ErroresDeRed.malaDireccionUrl {
+        catch ErroresDeRed.badUrl {
             print("Tienes mal la url, cambiala")
         }
         catch ErroresDeRed.badResponse {
-            print("Algo salió mal con la respuesta, revisa porfas")
+            print("Algo salió mal con la respuesta, revisa por favor")
         }
         catch ErroresDeRed.badStatus {
-            print("Como conseguiste un status de algo que ni se mueve? wtf")
+            print("Como conseguiste un status de algo que ni se mueve...")
         }
         catch ErroresDeRed.fallaAlConvertirLaRespuesta {
             print("Tienes mal el modelo o la implementación de este")
         }
         catch ErroresDeRed.invalidRequest{
-            print("Literal quien sabe comom hiciste este error man, neta")
+            print("Literal quien sabe como hiciste este error")
         }
         catch{
             print("Algo terriblemente mal que no se que es, paso. No deberia pasar eso")

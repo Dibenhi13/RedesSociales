@@ -8,32 +8,34 @@
 import SwiftUI
  
 struct GeneralPublicaciones: View {
-   // @StateObject var controlador = ControladorPublicaciones() //guardamos la informacion quequeremos guardar
+    // @StateObject var controlador = ControladorPublicaciones() //guardamos la informacion quequeremos guardar
     @Environment(ControladorAplicacion.self) var controlador
     
     var body: some View {
-        ScrollView{
-            VStack{
-                ForEach(controlador.publicaciones){ publicacion in
-                    NavigationLink{
-                        Text("\(publicacion.id)")
-                    }label:{
-                        HStack{
-                            Text("\(publicacion.id)")
-                            VStack{
-                                Text("\(publicacion.title)")
-                                Text("\(publicacion.body)")
+        NavigationStack{
+            ScrollView{
+                VStack{
+                    ForEach(controlador.publicaciones){ publicacion in
+                        NavigationLink{
+                            PublicacionVista()
+                        }label:{
+                            HStack{
+                                Text("\(publicacion.id)")
+                                VStack{
+                                    Text("\(publicacion.title)")
+                                    Text("\(publicacion.body)")
+                                }
                             }
-                        }
-                    }.onTapGesture {
-                        print("Ha seleccionado: \(publicacion.id)")
+                            
+                        }.simultaneousGesture(TapGesture().onEnded({
+                            controlador.seleccionar_publicacion(publicacion)
+                        }))
                     }
-                
                 }
             }
-        }
-        .onAppear{
-            print("Hi world")
+            .onAppear{
+                print("Hi world")
+            }
         }
     }
 }
