@@ -50,3 +50,51 @@ struct MenuNavegacion: View {
     MenuNavegacion()
         .environment(ControladorAplicacion())
 }
+
+
+/*//
+ //  menu_aplicacion.swift
+ //  RedesSociales
+ //
+ //  Created by alumno on 3/31/25.
+ //
+  
+ import SwiftUI
+  
+ struct MenuNavegacion: View {
+     @Environment(ControladorAplicacion.self) var controlador
+     var body: some View {
+         TabView{
+             GeneralPublicaciones()
+                 .tabItem{
+                     Label("En esta pantalla", systemImage:
+                     "circle")
+                 }
+                 .badge(controlador.publicaciones.count)
+
+             Text("You look like you were ai generated")
+                 .tabItem{
+                     Label{
+                         Text("Es neta pantalla")
+                         Text("Es neta pantalla")
+                     }icon: {
+                         Circle()
+                             .frame(width:44, height: 44,
+                                    alignment: .center)
+                             .overlay(Text("33 Abraham"))
+                     }
+                 }
+             Text("Hellooo")
+                 .tabItem{
+                     Label("En esta pantalla", systemImage:
+                     "circle")
+                 }
+                 .badge(controlador.publicaciones.count)
+         }
+     }
+ }
+  
+ #Preview {
+     MenuNavegacion()
+         .environment(ControladorAplicacion())
+ }*/
