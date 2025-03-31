@@ -13,30 +13,68 @@ struct PublicacionVista: View {
     @Environment(ControladorAplicacion.self) var controlador
     
     var body: some View {
-        Text("\(controlador.publicacion_seleccionada?.title ?? "Valor por defecto")")
-        Text("\(controlador.publicacion_seleccionada?.body ?? "Valor por defecto")")
-        
-        NavigationLink{
-            PerfilBasicoVista()
-        }label: {
-            Text("Ver perfil")
-        }.simultaneousGesture(TapGesture().onEnded({
-            controlador.ver_perfil(id: controlador.publicacion_seleccionada!.userId)
-        }))
-        
-        ScrollView{
-            VStack{
-                ForEach(controlador.comentarios){ comentario in
-                    Text("Usuario: \(comentario.name)")
-                    Text("\(comentario.body)")}
+        VStack(alignment: .leading, spacing: 20) {
+            // Tarjeta de la publicación
+            RoundedRectangle(cornerRadius: 15)
+                .fill(Color.white)
+                .shadow(radius: 5)
+                .padding()
+                .overlay(
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text(controlador.publicacion_seleccionada?.title ?? "Título no disponible")
+                            .font(.title2)
+                            .fontWeight(.bold)
+                            .foregroundColor(.black)
+                        Text(controlador.publicacion_seleccionada?.body ?? "Contenido no disponible")
+                            .font(.body)
+                            .foregroundColor(.gray)
+                    }
+                    .padding()
+                )
+            // Botón para ver perfil
+            NavigationLink {
+                PerfilBasicoVista()
+            } label: {
+                Text("Ver perfil")
+                    .font(.headline)
+                    .foregroundColor(.white)
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.pink)
+                    .cornerRadius(10)
+            }
+            .padding(.horizontal)
+            .simultaneousGesture(TapGesture().onEnded({
+                controlador.ver_perfil(id: controlador.publicacion_seleccionada?.userId ?? 0)
+            }))
+            // Sección de comentarios
+            ScrollView {
+                VStack(spacing: 10) {
+                    ForEach(controlador.comentarios) { comentario in
+                        VStack(alignment: .leading, spacing: 5) {
+                            Text(comentario.name)
+                                .font(.headline)
+                                .foregroundColor(.black)
+                            Text(comentario.body)
+                                .font(.subheadline)
+                                .foregroundColor(.gray)
+                        }
+                        .padding()
+                        .background(Color.white)
+                        .cornerRadius(10)
+                        .shadow(radius: 2)
+                    }
+                }
+                .padding()
             }
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.pink.opacity(0.2))
     }
-}
-
-#Preview {
-    NavigationStack{
+ }
+ #Preview {
+    NavigationStack {
         PublicacionVista()
             .environment(ControladorAplicacion())
     }
-}
+ }

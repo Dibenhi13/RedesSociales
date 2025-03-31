@@ -21,6 +21,7 @@
 		FB5EA7CD2D9453590061DFC5 /* controlador_app.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5EA7CC2D9453590061DFC5 /* controlador_app.swift */; };
 		FB7E2F852D9700F6005BC8EE /* perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7E2F842D9700F6005BC8EE /* perfil.swift */; };
 		FB7E2F882D97045C005BC8EE /* perfil_vista_basico.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7E2F872D97045C005BC8EE /* perfil_vista_basico.swift */; };
+		FBE174A12D9AF10D004D256D /* menu_aplicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE174A02D9AF10D004D256D /* menu_aplicacion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		FB5EA7CC2D9453590061DFC5 /* controlador_app.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = controlador_app.swift; sourceTree = "<group>"; };
 		FB7E2F842D9700F6005BC8EE /* perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = perfil.swift; sourceTree = "<group>"; };
 		FB7E2F872D97045C005BC8EE /* perfil_vista_basico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = perfil_vista_basico.swift; sourceTree = "<group>"; };
+		FBE174A02D9AF10D004D256D /* menu_aplicacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menu_aplicacion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 		FB3D5C702D91BDFC00B42A90 /* ui */ = {
 			isa = PBXGroup;
 			children = (
+				FBE1749F2D9AF0F7004D256D /* menu_inicial */,
 				FB7E2F862D970442005BC8EE /* perfil_basico */,
 				FB3D5C712D91BE0800B42A90 /* publicaciones */,
 			);
@@ -143,6 +146,14 @@
 				FB7E2F872D97045C005BC8EE /* perfil_vista_basico.swift */,
 			);
 			path = perfil_basico;
+			sourceTree = "<group>";
+		};
+		FBE1749F2D9AF0F7004D256D /* menu_inicial */ = {
+			isa = PBXGroup;
+			children = (
+				FBE174A02D9AF10D004D256D /* menu_aplicacion.swift */,
+			);
+			path = menu_inicial;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FBE174A12D9AF10D004D256D /* menu_aplicacion.swift in Sources */,
 				FB7E2F882D97045C005BC8EE /* perfil_vista_basico.swift in Sources */,
 				FB3D5C732D91BE1A00B42A90 /* publicaciones_general.swift in Sources */,
 				FB3D5C6B2D91B4A000B42A90 /* placeholder_api.swift in Sources */,

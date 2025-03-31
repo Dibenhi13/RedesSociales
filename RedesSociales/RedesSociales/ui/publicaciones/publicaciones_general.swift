@@ -14,33 +14,52 @@ struct GeneralPublicaciones: View {
     var body: some View {
         NavigationStack{
             ScrollView{
-                VStack{
+                VStack(spacing: 15){
                     ForEach(controlador.publicaciones){ publicacion in
                         NavigationLink{
                             PublicacionVista()
                         }label:{
-                            HStack{
-                                Text("\(publicacion.id)")
-                                VStack{
-                                    Text("\(publicacion.title)")
-                                    Text("\(publicacion.body)")
+                            HStack(alignment: .top, spacing: 15){
+                             
+                                Circle()
+                                    .fill(Color.pink.opacity(0.7))
+                                    .frame(width: 50, height: 50)
+                                    .overlay(Text("\(publicacion.id)").foregroundColor(.white))
+                               
+                                VStack(alignment: .leading, spacing: 5) {
+                                    Text(publicacion.title)
+                                        .font(.headline)
+                                        .foregroundColor(.black)
+                                    Text(publicacion.body)
+                                        .font(.subheadline)
+                                        .foregroundColor(.gray)
+                                        .lineLimit(3)
                                 }
+                                .padding(.vertical, 10)
+                                Spacer()
                             }
-                            
-                        }.simultaneousGesture(TapGesture().onEnded({
+                            .padding()
+                            .background(Color.white)
+                            .cornerRadius(12)
+                            .shadow(radius: 3)
+                        }
+                        .simultaneousGesture(TapGesture().onEnded {
                             controlador.seleccionar_publicacion(publicacion)
-                        }))
+                        })
                     }
                 }
+                .padding()
             }
-            .onAppear{
+            .background(Color.pink.opacity(0.2))
+            .onAppear {
                 print("Hi world")
             }
         }
     }
-}
+ }
 
 #Preview {
     GeneralPublicaciones()
         .environment(ControladorAplicacion())
 }
+
