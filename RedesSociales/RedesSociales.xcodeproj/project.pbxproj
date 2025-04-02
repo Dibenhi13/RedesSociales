@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB2AB69C2D9D942400AF2066 /* mono_chino.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2AB69B2D9D942400AF2066 /* mono_chino.swift */; };
+		FB2AB69E2D9D966800AF2066 /* planeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2AB69D2D9D966800AF2066 /* planeta.swift */; };
+		FB2AB6A02D9D975800AF2066 /* transformacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2AB69F2D9D975800AF2066 /* transformacion.swift */; };
+		FB2AB6A22D9D98B500AF2066 /* dragonball_api.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2AB6A12D9D98B500AF2066 /* dragonball_api.swift */; };
+		FB2AB6A52D9D9A8600AF2066 /* pagina_resultados.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2AB6A42D9D9A8600AF2066 /* pagina_resultados.swift */; };
 		FB3969632D945E8700F230C0 /* publicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3969622D945E8700F230C0 /* publicacion.swift */; };
 		FB3969652D94633700F230C0 /* comentario.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3969642D94633700F230C0 /* comentario.swift */; };
 		FB3D5C582D91B0AE00B42A90 /* RedesSocialesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3D5C572D91B0AE00B42A90 /* RedesSocialesApp.swift */; };
@@ -25,6 +30,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB2AB69B2D9D942400AF2066 /* mono_chino.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mono_chino.swift; sourceTree = "<group>"; };
+		FB2AB69D2D9D966800AF2066 /* planeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = planeta.swift; sourceTree = "<group>"; };
+		FB2AB69F2D9D975800AF2066 /* transformacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = transformacion.swift; sourceTree = "<group>"; };
+		FB2AB6A12D9D98B500AF2066 /* dragonball_api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dragonball_api.swift; sourceTree = "<group>"; };
+		FB2AB6A42D9D9A8600AF2066 /* pagina_resultados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pagina_resultados.swift; sourceTree = "<group>"; };
 		FB3969622D945E8700F230C0 /* publicacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = publicacion.swift; sourceTree = "<group>"; };
 		FB3969642D94633700F230C0 /* comentario.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = comentario.swift; sourceTree = "<group>"; };
 		FB3D5C542D91B0AE00B42A90 /* RedesSociales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedesSociales.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,6 +64,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB2AB69A2D9D940C00AF2066 /* dragon_ball */ = {
+			isa = PBXGroup;
+			children = (
+				FB2AB6A32D9D9A6D00AF2066 /* soporte */,
+				FB2AB69B2D9D942400AF2066 /* mono_chino.swift */,
+				FB2AB69D2D9D966800AF2066 /* planeta.swift */,
+				FB2AB69F2D9D975800AF2066 /* transformacion.swift */,
+			);
+			path = dragon_ball;
+			sourceTree = "<group>";
+		};
+		FB2AB6A32D9D9A6D00AF2066 /* soporte */ = {
+			isa = PBXGroup;
+			children = (
+				FB2AB6A42D9D9A8600AF2066 /* pagina_resultados.swift */,
+			);
+			path = soporte;
+			sourceTree = "<group>";
+		};
 		FB3D5C4B2D91B0AE00B42A90 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +125,7 @@
 		FB3D5C652D91B18500B42A90 /* modelos */ = {
 			isa = PBXGroup;
 			children = (
+				FB2AB69A2D9D940C00AF2066 /* dragon_ball */,
 				FB3D5C682D91B26F00B42A90 /* Publicacion.swift */,
 				FB3969642D94633700F230C0 /* comentario.swift */,
 				FB7E2F842D9700F6005BC8EE /* perfil.swift */,
@@ -117,6 +147,7 @@
 			children = (
 				FB3D5C6A2D91B4A000B42A90 /* placeholder_api.swift */,
 				FB3D5C6C2D91B4AD00B42A90 /* errores.swift */,
+				FB2AB6A12D9D98B500AF2066 /* dragonball_api.swift */,
 			);
 			path = servicios_API;
 			sourceTree = "<group>";
@@ -231,12 +262,17 @@
 				FB3D5C732D91BE1A00B42A90 /* publicaciones_general.swift in Sources */,
 				FB3D5C6B2D91B4A000B42A90 /* placeholder_api.swift in Sources */,
 				FB3D5C692D91B26F00B42A90 /* Publicacion.swift in Sources */,
+				FB2AB6A02D9D975800AF2066 /* transformacion.swift in Sources */,
 				FB7E2F852D9700F6005BC8EE /* perfil.swift in Sources */,
+				FB2AB6A52D9D9A8600AF2066 /* pagina_resultados.swift in Sources */,
 				FB3D5C5A2D91B0AE00B42A90 /* ContentView.swift in Sources */,
+				FB2AB6A22D9D98B500AF2066 /* dragonball_api.swift in Sources */,
 				FB3969652D94633700F230C0 /* comentario.swift in Sources */,
+				FB2AB69C2D9D942400AF2066 /* mono_chino.swift in Sources */,
 				FB3969632D945E8700F230C0 /* publicacion.swift in Sources */,
 				FB3D5C6F2D91BC4600B42A90 /* controlador_publicaciones.swift in Sources */,
 				FB3D5C582D91B0AE00B42A90 /* RedesSocialesApp.swift in Sources */,
+				FB2AB69E2D9D966800AF2066 /* planeta.swift in Sources */,
 				FB3D5C6D2D91B4AD00B42A90 /* errores.swift in Sources */,
 				FB5EA7CD2D9453590061DFC5 /* controlador_app.swift in Sources */,
 			);

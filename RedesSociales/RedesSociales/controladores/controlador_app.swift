@@ -19,8 +19,15 @@ public class ControladorAplicacion{
     init(){
         Task.detached(priority: .high){
             await self.descargar_publicaciones()
+            
+            await self.descargar_monos_chinos()
         }
     }
+    
+    func descargar_monos_chinos() async {
+        await print(DragonBallAPI().descargar_pagina_personajes())
+    }
+    
     func descargar_publicaciones() async {
         defer{
             print("Esta funcion se mandó allamar despu+es de todos los awaits en mi función \(#function)")
