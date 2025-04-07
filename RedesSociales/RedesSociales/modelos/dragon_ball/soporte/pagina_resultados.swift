@@ -7,7 +7,7 @@
 
 struct Meta: Codable{
     let totalItems: Int
-    let itemsCount: Int
+    let itemCount: Int
     let itemsPerPage: Int
     let totalPages: Int
     let currentPage: Int
