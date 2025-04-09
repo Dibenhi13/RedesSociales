@@ -8,17 +8,43 @@
 import SwiftUI
 
 struct PersonajeVista: View {
-    @Environment(ControladorAplicacion.self) var controlador
+@Environment(ControladorAplicacion.self) var controlador
 
-        var body: some View {
-            Text("User: \(controlador.pagina_resultados?.items.description ?? "Valor por defecto")")
-            Text("User: \(controlador.pagina_resultados?.items.description ?? "Valor por defecto")")
-            Text("User: \(controlador.pagina_resultados?.items.description ?? "Valor por defecto")")
-                .onDisappear(){
-                    print("Adios, solo sale este mensaje cuando destruimos la vista")
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 12) {
+                if let personaje = controlador.personaje {
+                    AsyncImage(url: URL(string: personaje.image)) { image in
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .cornerRadius(16)
+
+                    } placeholder: {
+                        Color.gray.opacity(0.2)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding()
+
+                    Text("Nombre: \(personaje.name)")
+                    Text("Ki: \(personaje.ki)")
+                    Text("Max Ki: \(personaje.maxKi)")
+                    Text("Raza: \(personaje.race)")
+                    Text("Género: \(personaje.gender)")
+                    Text("Descripción: \(personaje.description)")
+                    Text("Afiliación: \(personaje.affiliation)")
+                    //Text("Planeta de origen: \(personaje.originPlanet)")
+                    Text("Transformaciones: \(personaje.transformations?.count ?? 0)")
+                } else {
+                    Text("Cargando personaje...")
                 }
+            }
+            .font(.body)
+            .padding()
+            .background(Color("FondoClaro"))
         }
     }
+}
 
 
 #Preview {
