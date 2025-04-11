@@ -25,7 +25,7 @@ struct PantallaPersonaje: View {
                             } label: {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 6)
-                                        .fill(Color("PastelGreen"))
+                                        .fill(Color.brown)
                                         .shadow(radius: 5)
                                     HStack(spacing: 16) {
                                         AsyncImage(url: URL(string: personaje.image)) { image in
@@ -35,7 +35,7 @@ struct PantallaPersonaje: View {
                                         } placeholder: {
                                             Color.gray.opacity(0.2)
                                         }
-                                        .frame(width: 80, height: 80)
+                                        .frame(width: 80, height: 120)
                                         .clipShape(RoundedRectangle(cornerRadius: 12))
                                         VStack(alignment: .leading, spacing: 4) {
                                             Text(personaje.name)
@@ -60,7 +60,8 @@ struct PantallaPersonaje: View {
                     }
                     .padding(.vertical)
                 }
-                .background(Color("FondoClaro"))
+                .navigationTitle("Lista de Personajes")
+                .navigationBarTitleDisplayMode(.inline)
             }
         }
     }

@@ -12,21 +12,33 @@ struct PersonajeVista: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 16) {
                 if let personaje = controlador.personaje {
                     AsyncImage(url: URL(string: personaje.image)) { image in
                         image
                             .resizable()
                             .scaledToFit()
-                            .cornerRadius(16)
+                            .frame(height: 200)
+                            .clipped()
+                            .cornerRadius(20)
 
                     } placeholder: {
                         Color.gray.opacity(0.2)
+                            .frame(height: 200)
+                            .cornerRadius(20)
                     }
-                    .frame(maxWidth: .infinity)
-                    .padding()
+                    .padding(.horizontal)
 
-                    Text("Nombre: \(personaje.name)")
+                    infoItem(label: "Nombre", value: personaje.name)
+                    infoItem(label: "Ki", value: personaje.ki)
+                    infoItem(label: "Max Ki", value: personaje.maxKi)
+                    infoItem(label: "Raza", value: personaje.gender)
+                    infoItem(label: "Género", value: personaje.gender)
+                    infoItem(label: "Descripción", value: personaje.description)
+                    infoItem(label: "Afilación", value: personaje.affiliation)
+                    infoItem(label: "Transformaciones", value: "\(personaje.transformations?.count ?? 0)")
+                    
+                    /*Text("Nombre: \(personaje.name)")
                     Text("Ki: \(personaje.ki)")
                     Text("Max Ki: \(personaje.maxKi)")
                     Text("Raza: \(personaje.race)")
@@ -34,15 +46,30 @@ struct PersonajeVista: View {
                     Text("Descripción: \(personaje.description)")
                     Text("Afiliación: \(personaje.affiliation)")
                     //Text("Planeta de origen: \(personaje.originPlanet)")
-                    Text("Transformaciones: \(personaje.transformations?.count ?? 0)")
+                    Text("Transformaciones: \(personaje.transformations?.count ?? 0)")*/
                 } else {
                     Text("Cargando personaje...")
+                        .foregroundColor(.gray)
+                        .padding()
                 }
-            }
-            .font(.body)
-            .padding()
-            .background(Color("FondoClaro"))
+            }.padding()
         }
+        .navigationTitle("Perfil del Personaje")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+    
+    func infoItem(label: String, value: String) -> some View{
+        VStack(alignment: .leading, spacing: 4){
+            Text(label)
+                .font(.caption)
+                .foregroundColor(.gray)
+            Text(value)
+                .font(.body)
+                .foregroundColor(.black)
+                .padding(.bottom, 8)
+            Divider().background(Color.gray.opacity(0.3))
+        }
+        .padding(.horizontal)
     }
 }
 
