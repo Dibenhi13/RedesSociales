@@ -32,21 +32,13 @@ struct PersonajeVista: View {
                     infoItem(label: "Nombre", value: personaje.name)
                     infoItem(label: "Ki", value: personaje.ki)
                     infoItem(label: "Max Ki", value: personaje.maxKi)
-                    infoItem(label: "Raza", value: personaje.gender)
+                    infoItem(label: "Raza", value: personaje.race)
                     infoItem(label: "Género", value: personaje.gender)
                     infoItem(label: "Descripción", value: personaje.description)
                     infoItem(label: "Afilación", value: personaje.affiliation)
+                    infoItem(label: "Planeta de Origen", value: personaje.originPlanet?.name ?? "Desconocido")
                     infoItem(label: "Transformaciones", value: "\(personaje.transformations?.count ?? 0)")
                     
-                    /*Text("Nombre: \(personaje.name)")
-                    Text("Ki: \(personaje.ki)")
-                    Text("Max Ki: \(personaje.maxKi)")
-                    Text("Raza: \(personaje.race)")
-                    Text("Género: \(personaje.gender)")
-                    Text("Descripción: \(personaje.description)")
-                    Text("Afiliación: \(personaje.affiliation)")
-                    //Text("Planeta de origen: \(personaje.originPlanet)")
-                    Text("Transformaciones: \(personaje.transformations?.count ?? 0)")*/
                 } else {
                     Text("Cargando personaje...")
                         .foregroundColor(.gray)
