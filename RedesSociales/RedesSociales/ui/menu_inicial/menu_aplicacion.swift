@@ -16,29 +16,25 @@ import SwiftUI
 
 struct MenuNavegacion: View {
     @Environment(ControladorAplicacion.self) var controlador
+
     var body: some View {
-        TabView{
+        TabView {
             GeneralPublicaciones()
-                .tabItem { Label("Cuentas y tal", systemImage: "Circle") }
+                .tabItem { Label("Posts", systemImage: "bubble.left.circle.fill") }
                 .badge(controlador.publicaciones.count)
+
             PantallaPersonaje()
-                .tabItem { Label("Dragon Ball DB", systemImage: "Circle") }
-            Text("Hola desde pantalla 3")
-                .tabItem {
-                    Label{
-                        VStack{
-                            Text("Pantallita 3")
-                                //.//font(.custom("BungeeTint-Regular", size: 34))
-                        }
-                    } icon: {
-                        Circle()
-                            .frame(width: 44, height: 44, alignment: .center)
-                            .overlay(Text("Holaaa"))
-                    }
-                }
+                .tabItem { Label("Dragon Ball DB", systemImage: "star.circle.fill") }
+
+            Text("Página de Planetas") // Placeholder para tu vista de planetas
+                .tabItem { Label("Planetas", systemImage: "globe.americas.fill")}
+
+            PerfilBasicoVista()
+                .tabItem { Label("Perfil", systemImage: "person.crop.circle") } // Cambié el systemImage
         }
     }
 }
+
 #Preview {
     MenuNavegacion()
         .environment(ControladorAplicacion())

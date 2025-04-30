@@ -26,6 +26,7 @@
 		FB5EA7CD2D9453590061DFC5 /* controlador_app.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5EA7CC2D9453590061DFC5 /* controlador_app.swift */; };
 		FB7E2F852D9700F6005BC8EE /* perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7E2F842D9700F6005BC8EE /* perfil.swift */; };
 		FB7E2F882D97045C005BC8EE /* perfil_vista_basico.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB7E2F872D97045C005BC8EE /* perfil_vista_basico.swift */; };
+		FB987AB82DC27A2500EB0972 /* foto_perfil.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB987AB72DC27A2500EB0972 /* foto_perfil.swift */; };
 		FBAA6EDE2DA423970045116C /* pantalla_personajes.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAA6EDD2DA423970045116C /* pantalla_personajes.swift */; };
 		FBAA6EE02DA42D370045116C /* personaje_vista.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAA6EDF2DA42D370045116C /* personaje_vista.swift */; };
 		FBE174A12D9AF10D004D256D /* menu_aplicacion.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBE174A02D9AF10D004D256D /* menu_aplicacion.swift */; };
@@ -52,6 +53,7 @@
 		FB5EA7CC2D9453590061DFC5 /* controlador_app.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = controlador_app.swift; sourceTree = "<group>"; };
 		FB7E2F842D9700F6005BC8EE /* perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = perfil.swift; sourceTree = "<group>"; };
 		FB7E2F872D97045C005BC8EE /* perfil_vista_basico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = perfil_vista_basico.swift; sourceTree = "<group>"; };
+		FB987AB72DC27A2500EB0972 /* foto_perfil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foto_perfil.swift; sourceTree = "<group>"; };
 		FBAA6EDD2DA423970045116C /* pantalla_personajes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pantalla_personajes.swift; sourceTree = "<group>"; };
 		FBAA6EDF2DA42D370045116C /* personaje_vista.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personaje_vista.swift; sourceTree = "<group>"; };
 		FBE174A02D9AF10D004D256D /* menu_aplicacion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = menu_aplicacion.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			children = (
 				FBAA6EDD2DA423970045116C /* pantalla_personajes.swift */,
 				FBAA6EDF2DA42D370045116C /* personaje_vista.swift */,
+				FB987AB72DC27A2500EB0972 /* foto_perfil.swift */,
 			);
 			path = dragon_ball;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				FBAA6EE02DA42D370045116C /* personaje_vista.swift in Sources */,
 				FB3D5C692D91B26F00B42A90 /* Publicacion.swift in Sources */,
 				FB2AB6A02D9D975800AF2066 /* transformacion.swift in Sources */,
+				FB987AB82DC27A2500EB0972 /* foto_perfil.swift in Sources */,
 				FB7E2F852D9700F6005BC8EE /* perfil.swift in Sources */,
 				FB2AB6A52D9D9A8600AF2066 /* pagina_resultados.swift in Sources */,
 				FB3D5C5A2D91B0AE00B42A90 /* ContentView.swift in Sources */,

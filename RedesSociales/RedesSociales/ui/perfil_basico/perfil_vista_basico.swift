@@ -6,19 +6,37 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct PerfilBasicoVista: View {
     @Environment(ControladorAplicacion.self) var controlador
     
+    @State var foto_seleccionada: PhotosPickerItem? = nil
+    @State var foto_a_mostrar: UIImage? = nil
+    
     var body: some View {
         VStack(spacing: 20) {
             // Avatar
-            Image(systemName: "person.crop.circle.fill")
-                .resizable()
-                .frame(width: 100, height: 100)
-                .foregroundColor(.white)
-                .background(Circle().fill(Color.pink.opacity(0.7)))
-                .padding(.top, 20)
+            PhotosPicker(selection: $foto_seleccionada){
+                Image(uiImage: foto_a_mostrar ?? UIImage(resource: .anakin))
+                    .resizable()
+                    .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                    .frame(width: 100, height: 100)
+                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                    .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                //.foregroundColor(.white)
+                    .background(Circle().fill(Color.pink.opacity(0.7)))
+            }
+            .onChange(of: foto_seleccionada){valor_anterior, valor_nuevo in
+                Task{
+                    if let foto_seleccionada, let datos = try? await foto_seleccionada.loadTransferable(type: Data.self){
+                        if let imagen = UIImage(data: datos){
+                            foto_a_mostrar = imagen
+                        }
+                    }
+                }
+            }
+            .padding(.top, 20)
             
             // Tarjeta de información
             RoundedRectangle(cornerRadius: 20)
@@ -48,6 +66,7 @@ struct PerfilBasicoVista: View {
         }
     }
  }
+    
  #Preview {
     PerfilBasicoVista()
         .environment(ControladorAplicacion())
