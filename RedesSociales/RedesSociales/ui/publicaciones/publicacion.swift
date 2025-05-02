@@ -14,7 +14,7 @@ struct PublicacionVista: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 20) {
-            // Tarjeta de la publicación
+            // Publicacion
             RoundedRectangle(cornerRadius: 15)
                 .fill(Color.white)
                 .shadow(radius: 5)
@@ -31,7 +31,7 @@ struct PublicacionVista: View {
                     }
                     .padding()
                 )
-            // Botón para ver perfil
+            // Ver perfil
             NavigationLink {
                 PerfilBasicoVista()
             } label: {
@@ -47,7 +47,7 @@ struct PublicacionVista: View {
             .simultaneousGesture(TapGesture().onEnded({
                 controlador.ver_perfil(id: controlador.publicacion_seleccionada?.userId ?? 0)
             }))
-            // Sección de comentarios
+            // Comentarios
             ScrollView {
                 VStack(spacing: 10) {
                     ForEach(controlador.comentarios) { comentario in

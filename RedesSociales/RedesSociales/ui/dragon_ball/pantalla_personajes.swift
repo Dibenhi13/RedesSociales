@@ -74,29 +74,4 @@ struct PantallaPersonaje: View {
 
 }
 
-/* var body: some View {
- NavigationStack{
-     if(controlador.pagina_resultados != nil){
-         ScrollView{
-             LazyVStack{
-                 ForEach(controlador.pagina_resultados!.items){ personaje in
-                     NavigationLink{
-                        PersonajeVista()
-                     }label:{
-                         HStack{
-                             Text("El personaje es \(personaje.name)")
-                             VStack{
-                                 AsyncImage(url: URL(string: personaje.image))
-                             }
-                         }
-                     }.simultaneousGesture(TapGesture().onEnded({
-                         //controlador.publicacion_seleccionada(publicacion)
-                     }))
-                 }
-             }
-         }
-     }
- }
-}
-}
-*/
+

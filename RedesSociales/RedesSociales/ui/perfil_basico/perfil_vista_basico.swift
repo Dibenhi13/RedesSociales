@@ -16,7 +16,7 @@ struct PerfilBasicoVista: View {
     
     var body: some View {
         VStack(spacing: 20) {
-            // Avatar
+            // Foto
             PhotosPicker(selection: $foto_seleccionada){
                 Image(uiImage: foto_a_mostrar ?? UIImage(resource: .anakin))
                     .resizable()
@@ -38,7 +38,7 @@ struct PerfilBasicoVista: View {
             }
             .padding(.top, 20)
             
-            // Tarjeta de información
+            // Info
             RoundedRectangle(cornerRadius: 20)
                 .fill(Color.white)
                 .shadow(radius: 5)
@@ -72,31 +72,3 @@ struct PerfilBasicoVista: View {
         .environment(ControladorAplicacion())
  }
 
-
-/*
- //
- //  perfil_vista_basico.swift
- //  RedesSociales
- //
- //  Created by alumno on 3/28/25.
- //
-  
- import SwiftUI
-  
- struct PerfilBasicoVista: View {
-     @Environment(ControladorAplicacion.self) var controlador
-     var body: some View {
-         Text("User: \(controlador.perfil_a_mostrar?.username ?? "Valor por defecto")")
-         Text("Nombre: \(controlador.perfil_a_mostrar?.name ?? "Valor por defecto")")
-         Text("Correo: \(controlador.perfil_a_mostrar?.email ?? "Valor por defecto")")
-             .onDisappear(){
-                 print("Adios, solo sale este mensaje cuando destruimos la vista")
-             }
-     }
- }
-  
- #Preview {
-     PerfilBasicoVista()
-         .environment(ControladorAplicacion())
- }
- */
