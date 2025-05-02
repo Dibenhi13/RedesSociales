@@ -50,6 +50,8 @@ struct GeneralPublicaciones: View {
                 }
                 .padding()
             }
+            .navigationTitle("Posts")
+            .navigationBarTitleDisplayMode(.inline)
             .background(Color.pink.opacity(0.2))
             .onAppear {
                 print("Hi world")

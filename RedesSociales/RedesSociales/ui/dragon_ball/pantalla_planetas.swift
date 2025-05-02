@@ -1,8 +1,8 @@
 //
-//  pantalla_personajes.swift
+//  pantalla_planetas.swift
 //  RedesSociales
 //
-//  Created by alumno on 4/4/25.
+//  Created by alumno on 5/2/25.
 //
 
 import SwiftUI
@@ -12,38 +12,37 @@ import SwiftUI
  */
 import SwiftUI
 
-struct PantallaPersonaje: View {
+struct PantallaPlaneta: View {
     @Environment(ControladorAplicacion.self) var controlador
     var body: some View {
         NavigationStack {
-            if let resultados = controlador.pagina_resultados {
+            if let resultados = controlador.pagina_resultados_planeta {
                 ScrollView {
                     LazyVStack(spacing: 20) {
-                        ForEach(resultados.items) { personaje in
+                        ForEach(resultados.items) { planeta in
                             NavigationLink {
-                                PersonajeVista()
+                                PlanetaVista()
                             } label: {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 10)
                                         .fill(Color.white)
                                         .shadow(radius: 5)
                                     HStack(spacing: 16) {
-                                        AsyncImage(url: URL(string: personaje.image)) { image in
+                                        AsyncImage(url: URL(string: planeta.image)) { image in
                                             image
                                                 .resizable()
                                                 .scaledToFill()
                                         } placeholder: {
                                             Color.gray.opacity(0.2)
                                         }
-                                        .frame(width: 80, height: 120)
+                                        .frame(width: 120, height: 120)
                                         .clipShape(RoundedRectangle(cornerRadius: 12))
+                                        
                                         VStack(alignment: .leading, spacing: 4) {
-                                            Text(personaje.name)
+                                            Text(planeta.name)
                                                 .font(.headline)
                                                 .foregroundColor(.black)
-                                            Text(personaje.race)
-                                                .font(.subheadline)
-                                                .foregroundColor(.gray.opacity(0.8))
+                                            
                                         }
                                         Spacer()
                                     }
@@ -53,14 +52,14 @@ struct PantallaPersonaje: View {
                             }
                             .simultaneousGesture(
                                 TapGesture().onEnded {
-                                    controlador.descargar_informacion_personaje(id: personaje.id)
+                                    controlador.descargar_informacion_planeta(id: planeta.id)
                                 }
                             )
                         }
                     }
                     .padding(.vertical)
                 }
-                .navigationTitle("Lista de Personajes")
+                .navigationTitle("Lista de Planetas")
                 .navigationBarTitleDisplayMode(.inline)
                 .background(Color.pink.opacity(0.2))
             }
@@ -69,34 +68,7 @@ struct PantallaPersonaje: View {
 }
 
 #Preview {
-    PantallaPersonaje()
+    PantallaPlaneta()
         .environment(ControladorAplicacion())
 
 }
-
-/* var body: some View {
- NavigationStack{
-     if(controlador.pagina_resultados != nil){
-         ScrollView{
-             LazyVStack{
-                 ForEach(controlador.pagina_resultados!.items){ personaje in
-                     NavigationLink{
-                        PersonajeVista()
-                     }label:{
-                         HStack{
-                             Text("El personaje es \(personaje.name)")
-                             VStack{
-                                 AsyncImage(url: URL(string: personaje.image))
-                             }
-                         }
-                     }.simultaneousGesture(TapGesture().onEnded({
-                         //controlador.publicacion_seleccionada(publicacion)
-                     }))
-                 }
-             }
-         }
-     }
- }
-}
-}
-*/

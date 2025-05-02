@@ -1,20 +1,20 @@
 //
-//  personaje_vista.swift
+//  planeta_vista.swift
 //  RedesSociales
 //
-//  Created by alumno on 4/7/25.
+//  Created by alumno on 5/2/25.
 //
 
 import SwiftUI
 
-struct PersonajeVista: View {
+struct PlanetaVista: View {
 @Environment(ControladorAplicacion.self) var controlador
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                if let personaje = controlador.personaje {
-                    AsyncImage(url: URL(string: personaje.image)) { image in
+                if let planeta = controlador.planeta {
+                    AsyncImage(url: URL(string: planeta.image)) { image in
                         image
                             .resizable()
                             .scaledToFit()
@@ -28,25 +28,16 @@ struct PersonajeVista: View {
                             .cornerRadius(20)
                     }
                     .padding(.horizontal)
-
-                    infoItem(label: "Nombre", value: personaje.name)
-                    infoItem(label: "Ki", value: personaje.ki)
-                    infoItem(label: "Max Ki", value: personaje.maxKi)
-                    infoItem(label: "Raza", value: personaje.race)
-                    infoItem(label: "Género", value: personaje.gender)
-                    infoItem(label: "Descripción", value: personaje.description)
-                    infoItem(label: "Afilación", value: personaje.affiliation)
-                    infoItem(label: "Planeta de Origen", value: personaje.originPlanet?.name ?? "Desconocido")
-                    infoItem(label: "Transformaciones", value: "\(personaje.transformations?.count ?? 0)")
                     
-                } else {
-                    Text("Cargando personaje...")
-                        .foregroundColor(.gray)
-                        .padding()
+                    infoItem(label: "Nombre", value: planeta.name)
+                    infoItem(label: "Destruido", value: planeta.isDestroyed ? "Sí, destruido" : "No destruido")
+                    infoItem(label: "Descripción", value: planeta.description)
+                
+                    
                 }
             }.padding()
         }
-        .navigationTitle("Perfil del Personaje")
+        .navigationTitle("Perfil del Planeta")
         .navigationBarTitleDisplayMode(.inline)
         .background(Color.pink.opacity(0.2))
     }
@@ -68,8 +59,5 @@ struct PersonajeVista: View {
 
 
 #Preview {
-    PersonajeVista()
+    PlanetaVista()
 }
-
-
-
